@@ -1,0 +1,55 @@
+git init publishing-house
+cd publishing-house
+git config --global user.name "Твоё Имя"
+git config --global user.email "почта@mail.ru"
+git add .
+git commit -m "Initial commit: добавлены README, CHANGELOG, .gitignore"
+git remote add origin https://github.com/твойник/publishing-house.git
+git branch -M main
+git push -u origin main
+git checkout -b models
+git add .
+git commit -m "feat: добавлены модели Author, Publisher, Book"
+git add CHANGELOG.md
+git commit --amend --no-edit
+git checkout main
+git merge models -m "Merge branch 'models' — версия 0.1.0"
+git tag -a v0.1.0 -m "Версия 0.1.0 — модели данных"
+git push
+git push --tags
+git branch -d models
+git checkout -b repository
+git add .
+git commit -m "feat: репозиторий с данными и операциями поиска/фильтрации"
+git add CHANGELOG.md
+git commit --amend --no-edit
+git checkout main
+git merge repository -m "Merge branch 'repository' — версия 0.2.0"
+git tag -a v0.2.0 -m "Версия 0.2.0"
+git push
+git push --tags
+git branch -d repository
+git checkout -b ui
+git add .
+git commit -m "feat: консольный интерфейс и меню"
+git add CHANGELOG.md
+git commit --amend --no-edit
+git checkout main
+git merge ui -m "Merge branch 'ui' — версия 0.3.0"
+git tag -a v0.3.0 -m "Версия 0.3.0"
+git push
+git push --tags
+git branch -d ui
+git checkout main
+git reset --hard HEAD~1
+git checkout -b conflict-branch
+notepad src/Main.java
+git add src/Main.java
+git commit -m "conflict: специально другой текст"
+git checkout main
+git merge conflict-branch
+notepad src/Main.java
+git add src/Main.java
+git commit -m "resolve: конфликт в меню (лаб1)"
+git push
+git log --oneline --graph --all

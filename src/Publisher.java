@@ -1,18 +1,16 @@
-public class Author {
+public class Publisher {   // ←←←← вот тут точно Publisher, а не Author
     private String name;
-    private int publicationsCount;
 
-    public Author(String name, int publicationsCount) {
+    public Publisher(String name) {
         this.name = name;
-        this.publicationsCount = publicationsCount;
     }
 
-    // геттеры
-    public String getName() { return name; }
-    public int getPublicationsCount() { return publicationsCount; }
+    public String getName() {
+        return name;
+    }
 
     @Override
     public String toString() {
-        return name + " (книг: " + publicationsCount + ")";
+        return name;
     }
 }
