@@ -9,6 +9,7 @@ public class Main {
 
         while (true) {
             System.out.println("\n=== Система учёта книг ===");
+
             System.out.println("1. КНИГИ ВСЕ");
             System.out.println("2. Поиск книг по издательству");
             System.out.println("3. Авторы с количеством книг ≥ N");
