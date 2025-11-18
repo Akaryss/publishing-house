@@ -1,0 +1,11 @@
+# Java
+*.class
+target/
+out/
+
+# IDEA
+.idea/
+*.iml
+
+.DS_Store
+*.log
